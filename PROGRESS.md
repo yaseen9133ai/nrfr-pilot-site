@@ -10,10 +10,10 @@ _Replaced (not appended) at the end of every step._
   - Step 3 Extraction + JSON (Yaseen, 2026-10-25; Yaseen's hours: 1 h). Decisions: `CLAUDE.md`, "Step 3 decisions".
   - Step 4 HTML (Yaseen, 2026-10-25; Yaseen's hours: 1 h). Decisions: `CLAUDE.md`, "Step 4 decisions: close-out".
   - Step 5 Checks, with its fix round (Yaseen, 2026-10-26; Yaseen's hours: 1 h for Step 5, 1 h for the fix round). Decisions: `CLAUDE.md`, "Step 5 decisions: fix round" and "Step 5 close-out decisions".
-- **Step 6 Share: done (2026-10-26)** (Yaseen's hours: to fill). Decisions: `CLAUDE.md`, "Step 5 close-out decisions" 5–6 and "Step 6 close-out decisions".
+- **Step 6 Share: done (2026-10-26)** (Yaseen's hours: 1 h). Decisions: `CLAUDE.md`, "Step 5 close-out decisions" 5–6 and "Step 6 close-out decisions".
   - First commit `bb7b84e6e50c798075b07348d0758db41d49f219` pushed to `main` at 2026-10-25T16:13:34Z (00:13 MYT on 26 October); second commit `0224831169387d3189af547d621a8e32277fcfbf` (this log).
   - **Live page: https://nrfr-pilot.vercel.app/** (Vercel, set up by Yaseen; root directory `site/`; deploys on every push to `main`). Checked on 2026-10-26: deployed from `0224831` (`main` at the time; its `site/` is the same as in `bb7b84e`). All 11 live files equal `site/` by SHA-256; `check_numbers.py` and `check_links.py` pass on the downloaded copy.
-  - The close-out commit (EU licence in the sources table, live URL, this record) redeploys the page; the check after that redeploy is in the entry "Step 6 close-out" below.
+  - Close-out commit `4d0daf818be066f95ae30d616eb91893a6255715` (EU licence in the sources table, live URL) pushed at 2026-10-25T16:24:02Z; Vercel redeployed it within about 10 s; all 11 live files equal `site/` at `4d0daf8` (entry "Step 6 close-out").
 - **PI's permission: received 2026-10-25** (rule 14).
 - **Repository:** public on GitHub, remote `origin` https://github.com/yaseen9133ai/nrfr-pilot-site.git, branch `main`. Commits use Yaseen's GitHub no-reply address (Step 5 close-out decision 6). Every push to `main` also redeploys the live page.
 - **Project name:** page title "NRFR palm oil pilot", the name once in the intro, "the pilot" elsewhere on the page (Step 5 close-out decision 4); folder names, paths and the repository may hold it (Step 5 decision 11).
@@ -27,9 +27,9 @@ _Replaced (not appended) at the end of every step._
 - **Pilot snapshot:**
   - Baseline 2026-10-25T10:25:57Z (`build/pilot_snapshot.csv`): 1,054 files. 213 in site scope (79,207,136 bytes, SHA-256, unchanged from the first baseline) and 841 other (2,605,108,622 bytes, size + mtime). 8 `.DS_Store` files ignored.
   - It replaces the first baseline (09:59:51Z, 1,084 files), with Yaseen's approval, after Yaseen deleted the pilot's `untitled folder/` (30 duplicate files). The old baseline is kept in `build/superseded/`.
-  - Last check: see the entry "Step 6 close-out" (no change).
+  - Last check: 2026-10-25T16:24:41Z, no change (entry "Step 6 close-out").
 - **Pilot state at the snapshot:** steps 1–9 approved; step 10 (findings report) waiting for Yaseen's decision (R057), shown on the page as "decision pending". R058 (unconfirmed hours) is open in the pilot; it is not shown on the page (Step 4 decision 10).
-- **Hours:** Claude Code about 3.2 h (Step 1 0.2 h + addendum 0.1 h + Step 1 close-out and Step 2 0.4 h + Step 2 close-out and Step 3 0.5 h + Step 3 close-out and Step 4 0.5 h + Step 4 close-out and Step 5 0.4 h + Step 5 fix round 0.6 h + Step 5 close-out and Step 6 0.3 h + Step 6 close-out 0.2 h; estimates from the system clock) · Yaseen 1 h (Step 1) + 1 h (Step 2) + 1 h (Step 3) + 1 h (Step 4) + 1 h (Step 5) + 1 h (fix round) + Step 6 (to fill).
+- **Hours:** Claude Code about 3.2 h (Step 1 0.2 h + addendum 0.1 h + Step 1 close-out and Step 2 0.4 h + Step 2 close-out and Step 3 0.5 h + Step 3 close-out and Step 4 0.5 h + Step 4 close-out and Step 5 0.4 h + Step 5 fix round 0.6 h + Step 5 close-out and Step 6 0.3 h + Step 6 close-out 0.2 h; estimates from the system clock) · Yaseen 1 h (Step 1) + 1 h (Step 2) + 1 h (Step 3) + 1 h (Step 4) + 1 h (Step 5) + 1 h (fix round) + 1 h (Step 6).
 
 ## Steps
 
@@ -607,7 +607,7 @@ _Replaced (not appended) at the end of every step._
 - **This entry:** written after the push and committed as a second commit, "Record the first commit and push in PROGRESS.md", pushed to `main` the same way (its hash is in `git log`; a file cannot hold the hash of the commit that contains it).
 - **Pilot snapshot:** start 2026-10-25T16:00:03Z **no change**; after the push 16:13:51Z **no change** (1,054 files, exit 0). `find -newermt "2026-10-26 00:00"` in the pilot (`.DS_Store` excluded): nothing modified. All scripts ran with `python3 -B`.
 - **Pass/fail:** Pass (commit, push, remote check). Step 6 is not finished: the Vercel deploy is left.
-- **Hours:** Claude Code about 0.3 h for the Step 5 close-out and this part of Step 6 (active time; estimate from the system clock, about 00:00–00:20 MYT) · Yaseen: to fill.
+- **Hours:** Claude Code about 0.3 h for the Step 5 close-out and this part of Step 6 (active time; estimate from the system clock, about 00:00–00:20 MYT) · Yaseen: 1 h for all of Step 6 (given at the end of the step).
 - **Issues:**
   - The GitHub account name contains the local part of the personal e-mail address the repository used before. The repository URL shows the account name in any case; the address itself is in no file and in no commit.
   - Reading the EU licence cell printed the whole `EU_FSF` row of the pilot's `source_register.csv` into Claude Code's session, including its notes cell, which names 3 listed persons from the public EU list (the search hits that were not the firm). Nothing was written anywhere; the names are in no file of this repository.
@@ -630,4 +630,13 @@ _Replaced (not appended) at the end of every step._
   - Two builds byte-identical. `site/index.html` 440,933 bytes, SHA-256 `9aba6a7053e5df8e4fda6160fff7d4841c0fdd4fce02d9ff7905738b0574e9f6`; `site/assets/style.css` unchanged (`e1b935b2…`); images and manifest unchanged.
   - `check_numbers.py` **pass**, 0 failures (273 of 273; no-tag elements 246 → 247, the version in the EU row). `test_check_numbers.py`: 34 of 34 and 26 of 26 caught. `check_offline.py` **pass**. `check_links.py` **pass**.
 - **Files changed:** `CLAUDE.md`, `PROGRESS.md`, `README.md`, `docs/content_inventory.md`, `scripts/extract.py`, `scripts/build_page.py`, `scripts/check_links.py`, `site/index.html`.
-- **5. Commit, push and the check after the redeploy:** below.
+- **5. Commit and push:** `4d0daf818be066f95ae30d616eb91893a6255715`, "Close Step 6: EU licence in the sources table, live URL" (Yaseen, GitHub no-reply address; with the `Co-Authored-By` line), pushed to `main` at 2026-10-25T16:24:02Z (00:24 MYT); `git ls-remote origin`: `HEAD` and `refs/heads/main` = `4d0daf8…`, equal to the local `HEAD`. Before it: `scan_exclusions.py` over the 22 text files, the same hits as in the Step 5 close-out (the approved project name in 15 files; the search patterns), no e-mail address; pilot snapshot no change.
+- **Check 2 again, after the redeploy:** the new page was served at 16:24:12Z (first poll, about 10 s after the push). Downloaded again at 16:24:35Z into a new folder, `build/live_after/` (git-ignored): all 11 files HTTP 200, SHA-256 **equal** to `site/` at `4d0daf8`: **0 differences**. The live page is deployed from `4d0daf8`, and "listed as CC BY 4.0" is no longer on it.
+- **This last part of the entry** (from "5. Commit and push") was written after the push. Yaseen decided (2026-10-26) to commit it together with the README title, in the final commit "Final record: push check, README title"; that push redeploys the page with `site/` unchanged.
+- **Pilot snapshot:** start 2026-10-25T16:20:29Z **no change**; before the commit 16:23Z **no change**; end 16:24:41Z **no change** (1,054 files, exit 0). `find -newermt "2026-10-26 00:00"` in the pilot (`.DS_Store` excluded): nothing modified. All scripts ran with `python3 -B` (and `-I` on the downloaded copy).
+- **Pass/fail:** Pass. Step 6 done.
+- **Hours:** Claude Code about 0.2 h (active time; estimate from the system clock, about 00:20–00:30 MYT) · Yaseen: in the 1 h for Step 6.
+- **Open questions for Yaseen:**
+  1. **`README.md` title** (carried over from the Step 6 entry): decided by Yaseen (2026-10-26): "NRFR palm oil pilot", no other change to `README.md`. Done in the final commit.
+  2. **This record:** decided by Yaseen (2026-10-26): committed and pushed with the README title. Yaseen's hours for Step 6: 1 h.
+- **End of step:** pilot snapshot `--check` at 2026-10-25T16:24:41Z: **no change** (1,054 files, exit 0). Re-run after writing this entry: see `build/pilot_snapshot_checks.log`.
