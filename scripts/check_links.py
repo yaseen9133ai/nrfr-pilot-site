@@ -20,12 +20,15 @@
             pass unchecked.
 
 Pilot path: PILOT_DIR (default ../nrfr-pilot, relative to nrfr-pilot-site/).
+--site DIR checks another copy of the page (a folder that holds index.html
+and assets/, for example a downloaded copy of the live page); default site/.
 Reads only: pilot files are opened for reading, no pilot code is run or
 imported. Exit 0 = pass, 1 = a problem, 2 = setup error.
 
 Python standard library only.
 """
 
+import argparse
 import csv
 import io
 import os
@@ -35,8 +38,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent.parent
-ROOT = SITE / 'site'
-INDEX = ROOT / 'index.html'
+DEFAULT_ROOT = SITE / 'site'
 
 
 def pilot_root():
@@ -206,15 +208,19 @@ def details_places(pilot, line, resolved):
 
 
 def main():
+    ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
+    ap.add_argument('--site', default=str(DEFAULT_ROOT), help='folder with index.html and assets/ (default site/)')
+    root = Path(ap.parse_args().site).resolve()
+    index = root / 'index.html'
     pilot = pilot_root()
-    if not INDEX.is_file():
-        print('ERROR: site/index.html not found.')
+    if not index.is_file():
+        print(f'ERROR: index.html not found in {root}.')
         return 2
     if not pilot.is_dir():
         print(f'ERROR: pilot folder not found (PILOT_DIR: {pilot}).')
         return 2
     page = Page()
-    page.feed(INDEX.read_text(encoding='utf-8'))
+    page.feed(index.read_text(encoding='utf-8'))
     problems = []
     # links
     internal = [(h, line) for h, line in page.hrefs if h.startswith('#')]
@@ -224,8 +230,8 @@ def main():
     print(f'In-page links: {len(internal)} ({len({h for h, _ in internal})} targets).')
     # images
     for src, href, line in page.imgs:
-        if not (ROOT / src).is_file():
-            problems.append(f'index.html line {line}: image not in site/: {src}')
+        if not (root / src).is_file():
+            problems.append(f'index.html line {line}: image not in the page folder: {src}')
         if href != src:
             problems.append(f'index.html line {line}: {src} does not sit inside a link to its own file')
     print(f'Images: {len(page.imgs)}, each checked for its file and its link to the full-size file.')

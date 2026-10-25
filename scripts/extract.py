@@ -551,6 +551,9 @@ def review_ids(text):
     """Review IDs in the order they first appear, each once."""
     return list(dict.fromkeys(REVIEW_ID.findall(text)))
 
+# Licence cells quoted only in part: the part that applies to the file used (EU_FSF: CSV 1.1; CC BY 4.0
+# is listed for CSV 1.0). Used in the sources list and the attributions (Step 5 and Step 6 close-out).
+LICENCE_PARTS = {'EU_FSF': 'European Commission reuse notice (Decision 2011/833/EU)'}
 # Attribution wording that the pilot records word for word (source_register.csv).
 ATTRIBUTION_QUOTES = [
     ('HANSEN_GFC', 'licence', 'This work is licensed under a Creative Commons Attribution 4.0 International License.'),
@@ -562,8 +565,7 @@ ATTRIBUTION_QUOTES = [
     ('ROADS_OSM', 'notes', 'Make clear that the data is available under the Open Database License.'),
     ('BOUNDARY_GEOB', 'notes', 'Boundary source: OpenStreetMap, Wambacher'),
     ('CBP_WRO', 'licence', 'This product uses U.S. Customs and Border Protection data, but is not endorsed by CBP.'),
-    # Only the part that applies to the file used (CSV 1.1); CC BY 4.0 is listed for CSV 1.0 (Step 5 close-out).
-    ('EU_FSF', 'licence', 'European Commission reuse notice (Decision 2011/833/EU)'),
+    ('EU_FSF', 'licence', LICENCE_PARTS['EU_FSF']),
 ]
 # Wording the page needs but the pilot does not record (open question for Yaseen).
 ATTRIBUTION_NOT_RECORDED = [
@@ -613,11 +615,20 @@ def build_lists(pilot, errors):
                                                            f'firm_id={fid}; year=2021', 'firm')})
         return out
 
+    def licence(sid):
+        loc = f'source_id={sid}'
+        if sid not in LICENCE_PARTS:
+            return csv_tfield(pilot, 'source_register.csv', loc, 'licence')
+        part, cell = LICENCE_PARTS[sid], csv_cell(pilot, 'source_register.csv', loc, 'licence')
+        if cell.count(part) != 1:
+            raise SourceError(f'{sid} licence: part found {cell.count(part)} times (need exactly 1)')
+        return tfield('source_register.csv', loc, f'text in licence: "{part}"', part)
+
     def sources():
         _, rows = pilot.csv('source_register.csv')
         return [{'source_id': r['source_id'],
                  'name': csv_tfield(pilot, 'source_register.csv', f'source_id={r["source_id"]}', 'name'),
-                 'licence': csv_tfield(pilot, 'source_register.csv', f'source_id={r["source_id"]}', 'licence'),
+                 'licence': licence(r['source_id']),
                  'date_downloaded': csv_tfield(pilot, 'source_register.csv', f'source_id={r["source_id"]}',
                                                'date_downloaded')}
                 for r in rows]

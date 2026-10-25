@@ -3,6 +3,7 @@
 A static web page that explains a palm oil pilot to a non-technical audience: what it built from public data, how every value can be traced back to its source, and what did not work. The page presents what the pilot produced; it adds no data or analysis.
 
 - **The page** is `site/index.html` with `site/assets/`. Only `site/` is published.
+- **Live:** https://nrfr-pilot.vercel.app/ (Vercel publishes `site/` on every push to `main`).
 - **Every number on the page** is inserted by a script from the pilot's own files and carries a source tag: the pilot file, the row, the column and the raw value. The page's appendix, "Where the numbers come from", lists every number with its tag.
 - **It works offline:** no scripts, web fonts, analytics or other requests to other sites.
 
@@ -38,6 +39,7 @@ python3 -B scripts/check_links.py         # every in-page link, image link, pilo
 python3 -B scripts/scan_exclusions.py site/index.html docs/*.csv   # personal data, absolute paths and terms that must not be published
 ```
 
+- To check a downloaded copy of the live page instead, give its folder: `check_numbers.py --html <folder>/index.html` and `check_links.py --site <folder>`.
 - Each check ends with its result (`PASS` or `CLEAN`) and writes nothing in the pilot. Reports go to `build/`, which is git-ignored.
 - `scan_exclusions.py` also needs a local term list, `build/private_terms.txt`, which is not in the repository; without it the scan stops.
 

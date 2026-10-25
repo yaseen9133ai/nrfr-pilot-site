@@ -492,6 +492,17 @@ TOPICS = [
 ]
 
 
+# Sources whose licence is quoted only in part (scripts/extract.py, LICENCE_PARTS): the file the part applies to.
+LICENCE_FILE_USED = {'EU_FSF': ('the CSV file, version ', '1.1')}
+
+
+def licence_part(s):
+    if s['source_id'] not in LICENCE_FILE_USED:
+        return ''
+    words, version = LICENCE_FILE_USED[s['source_id']]
+    return f' (the part for the file used: {esc(words)}{nt("version", version)})'
+
+
 def s2(p):
     b = Block(p, 's2-main')
     n = b.n
@@ -523,7 +534,7 @@ def s2(p):
         'use only; it is named here only as the gap. The raw files, annual-report pages and personal data are '
         'not published on this page.</p></div>')
     srcs = Block(p, 's2-sources')
-    rows = ''.join(f'<tr><td>{t(s["name"])}</td><td>{t(s["licence"])}</td><td>'
+    rows = ''.join(f'<tr><td>{t(s["name"])}</td><td>{t(s["licence"])}{licence_part(s)}</td><td>'
                    + (t(s['date_downloaded'], form='date') if s['date_downloaded']['value'] else 'not downloaded')
                    + '</td></tr>' for s in p.L['sources'])
     table = srcs.wrap(

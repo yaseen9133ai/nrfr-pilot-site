@@ -10,23 +10,26 @@ _Replaced (not appended) at the end of every step._
   - Step 3 Extraction + JSON (Yaseen, 2026-10-25; Yaseen's hours: 1 h). Decisions: `CLAUDE.md`, "Step 3 decisions".
   - Step 4 HTML (Yaseen, 2026-10-25; Yaseen's hours: 1 h). Decisions: `CLAUDE.md`, "Step 4 decisions: close-out".
   - Step 5 Checks, with its fix round (Yaseen, 2026-10-26; Yaseen's hours: 1 h for Step 5, 1 h for the fix round). Decisions: `CLAUDE.md`, "Step 5 decisions: fix round" and "Step 5 close-out decisions".
-- **Step 6 Share, in progress (2026-10-26):** first commit `bb7b84e6e50c798075b07348d0758db41d49f219` pushed to `main` at 2026-10-25T16:13:34Z (00:13 MYT), with Yaseen's go (Step 5 close-out decision 5); `git ls-remote` matches the local commit. This record is a second commit, pushed the same way. The Vercel deploy is not started (not part of the go). Details: entry "Step 6" below.
+- **Step 6 Share: done (2026-10-26)** (Yaseen's hours: to fill). Decisions: `CLAUDE.md`, "Step 5 close-out decisions" 5–6 and "Step 6 close-out decisions".
+  - First commit `bb7b84e6e50c798075b07348d0758db41d49f219` pushed to `main` at 2026-10-25T16:13:34Z (00:13 MYT on 26 October); second commit `0224831169387d3189af547d621a8e32277fcfbf` (this log).
+  - **Live page: https://nrfr-pilot.vercel.app/** (Vercel, set up by Yaseen; root directory `site/`; deploys on every push to `main`). Checked on 2026-10-26: deployed from `0224831` (`main` at the time; its `site/` is the same as in `bb7b84e`). All 11 live files equal `site/` by SHA-256; `check_numbers.py` and `check_links.py` pass on the downloaded copy.
+  - The close-out commit (EU licence in the sources table, live URL, this record) redeploys the page; the check after that redeploy is in the entry "Step 6 close-out" below.
 - **PI's permission: received 2026-10-25** (rule 14).
-- **Repository:** public on GitHub, remote `origin` https://github.com/yaseen9133ai/nrfr-pilot-site.git, branch `main`. Commits use Yaseen's GitHub no-reply address (Step 5 close-out decision 6).
+- **Repository:** public on GitHub, remote `origin` https://github.com/yaseen9133ai/nrfr-pilot-site.git, branch `main`. Commits use Yaseen's GitHub no-reply address (Step 5 close-out decision 6). Every push to `main` also redeploys the live page.
 - **Project name:** page title "NRFR palm oil pilot", the name once in the intro, "the pilot" elsewhere on the page (Step 5 close-out decision 4); folder names, paths and the repository may hold it (Step 5 decision 11).
-- **Next:** the Vercel deploy of `site/`, only after Yaseen's go (rule 11).
-- **Open items (Yaseen):** the open questions at the end of the Step 6 entry.
+- **Next:** none planned; all 6 steps are done. Any later change follows the same rules, and a push publishes it (rule 11).
+- **Open items (Yaseen):** the open questions at the end of the entry "Step 6 close-out".
 - **Paths:**
   - Pilot (read-only): `../nrfr-pilot`. Not a git repository. Every script reads it from `PILOT_DIR` (default `../nrfr-pilot`).
-  - Site: `.` (this folder). Git repository, branch `main`, remote `origin`.
+  - Site: `.` (this folder). Git repository, branch `main`, remote `origin`. Live: https://nrfr-pilot.vercel.app/.
   - Deployable page: `site/` (`site/index.html` + `site/assets/`). `build/` is for working files and is git-ignored.
 - **Publication (decided by Yaseen, 2026-10-25):** public GitHub repository, with `site/` deployed on Vercel, at Step 6.
 - **Pilot snapshot:**
   - Baseline 2026-10-25T10:25:57Z (`build/pilot_snapshot.csv`): 1,054 files. 213 in site scope (79,207,136 bytes, SHA-256, unchanged from the first baseline) and 841 other (2,605,108,622 bytes, size + mtime). 8 `.DS_Store` files ignored.
   - It replaces the first baseline (09:59:51Z, 1,084 files), with Yaseen's approval, after Yaseen deleted the pilot's `untitled folder/` (30 duplicate files). The old baseline is kept in `build/superseded/`.
-  - Last check: 2026-10-25T16:13:51Z, no change (Step 6 entry).
+  - Last check: see the entry "Step 6 close-out" (no change).
 - **Pilot state at the snapshot:** steps 1–9 approved; step 10 (findings report) waiting for Yaseen's decision (R057), shown on the page as "decision pending". R058 (unconfirmed hours) is open in the pilot; it is not shown on the page (Step 4 decision 10).
-- **Hours:** Claude Code about 3.0 h (Step 1 0.2 h + addendum 0.1 h + Step 1 close-out and Step 2 0.4 h + Step 2 close-out and Step 3 0.5 h + Step 3 close-out and Step 4 0.5 h + Step 4 close-out and Step 5 0.4 h + Step 5 fix round 0.6 h + Step 5 close-out and Step 6 0.3 h; estimates from the system clock) · Yaseen 1 h (Step 1) + 1 h (Step 2) + 1 h (Step 3) + 1 h (Step 4) + 1 h (Step 5) + 1 h (fix round) + Step 6 (to fill).
+- **Hours:** Claude Code about 3.2 h (Step 1 0.2 h + addendum 0.1 h + Step 1 close-out and Step 2 0.4 h + Step 2 close-out and Step 3 0.5 h + Step 3 close-out and Step 4 0.5 h + Step 4 close-out and Step 5 0.4 h + Step 5 fix round 0.6 h + Step 5 close-out and Step 6 0.3 h + Step 6 close-out 0.2 h; estimates from the system clock) · Yaseen 1 h (Step 1) + 1 h (Step 2) + 1 h (Step 3) + 1 h (Step 4) + 1 h (Step 5) + 1 h (fix round) + Step 6 (to fill).
 
 ## Steps
 
@@ -37,7 +40,7 @@ _Replaced (not appended) at the end of every step._
 | 3 | Extraction + JSON: scripts read the pilot and write the page data (with source tags) to `build/` | Approved 2026-10-25 |
 | 4 | HTML: `site/index.html` + `site/assets/`, built from the JSON | Approved 2026-10-25 |
 | 5 | Checks: every tagged number against its source; no untagged numbers; offline; exclusions; attributions | Approved 2026-10-26 (with its fix round) |
-| 6 | Share: git remote, push to the public GitHub repository, Vercel deploy of `site/` (each only with Yaseen's approval; the PI's permission was recorded on 2026-10-25) | In progress: first commit and push 2026-10-26; Vercel deploy not started |
+| 6 | Share: git remote, push to the public GitHub repository, Vercel deploy of `site/` (each only with Yaseen's approval; the PI's permission was recorded on 2026-10-25) | Done 2026-10-26: public repository; live at https://nrfr-pilot.vercel.app/ |
 
 ---
 
@@ -613,3 +616,18 @@ _Replaced (not appended) at the end of every step._
   2. **`README.md` title:** still "Palm oil pilot: from public data to a traceable table" (decision 4 covered the page). Change it to match the page title?
   3. **Vercel deploy:** when Yaseen gives the go (rule 11). The page needs no build step: the output directory is `site/`.
 - **End of step:** pilot snapshot `--check` at 2026-10-25T16:13:51Z: **no change** (1,054 files, exit 0). Re-run after writing this entry: see `build/pilot_snapshot_checks.log`.
+
+#### Step 6 close-out — live page check
+
+- **Date:** 2026-10-26
+- **Brief (Yaseen):** check the live page (https://nrfr-pilot.vercel.app/; Vercel, root directory `site/`, deploys on push to `main`); fix the EU licence in the sources table; compare the live files with `site/`; run the checks on the live copy; add the live URL; mark Step 6 done; commit and push; after the redeploy, compare again. Decisions recorded in `CLAUDE.md`, "Step 6 close-out decisions".
+- **1. EU licence:** the Part A fix (Step 5 close-out decision 1) had been applied locally **to the credits only**: the sources table in section 2 showed every licence cell as recorded, the EU row in full, and this was left as the Step 6 open question 1. So the live page showed "the CSV distribution is listed as CC BY 4.0" in the table, as expected. Now fixed (decision 1): `extract.py` has one list, `LICENCE_PARTS`, of licence cells quoted only in part (`EU_FSF`: "European Commission reuse notice (Decision 2011/833/EU)"), used by both the sources list and the credits; the quote is checked to occur exactly once in the cell (`text in licence: "…"`). The table cell reads "European Commission reuse notice (Decision 2011/833/EU) (the part for the file used: the CSV file, version 1.1)" (`LICENCE_FILE_USED` in `build_page.py`). "listed as CC BY 4.0" is no longer on the page.
+- **2. Live vs local, before the fix** (2026-10-25T16:20:44Z, 00:20 MYT; `curl`, read-only, into `build/live/`, git-ignored): `/` and `/index.html` both HTTP 200, the same 440,801 bytes; the 10 files of `site/assets/` HTTP 200, with the expected content types. SHA-256 of all **11 files equal** to `site/` at `0224831` and to the working tree at that time: **0 differences**. The live page was deployed from `0224831` (`main` at the time; its `site/` is the same as in `bb7b84e`, the second commit changed only `PROGRESS.md`).
+- **3. Checks on the live copy** (before the fix; `python3 -I -B`): `check_numbers.py --html build/live/index.html`: **pass**, 0 failures, 273 of 273 spec numbers on the page (report in `build/live_check/`). `check_links.py --site build/live`: **pass** (181 in-page links, 8 images each linked to its own file, 82 pilot paths, 25 places in the "Details in the pilot" lines). `check_links.py` got the option `--site` for this (default `site/`); the 10 planted errors of the Step 5 close-out were run again through it: 10 of 10 caught.
+- **4. Live URL:** in `README.md` (with how to check a downloaded copy) and in this log (Current status, Steps table). Step 6 marked done.
+- **Checks after the fix** (all with `python3 -B`; output in `build/final_checks.txt`):
+  - Extraction: 273 of 273 numbers, twice: `build/site_data.json` SHA-256 `e2765a6f068e4ab7210aaf7f2d191d646c666128ff0d7e70eb7de9294ea19b7f` both times.
+  - Two builds byte-identical. `site/index.html` 440,933 bytes, SHA-256 `9aba6a7053e5df8e4fda6160fff7d4841c0fdd4fce02d9ff7905738b0574e9f6`; `site/assets/style.css` unchanged (`e1b935b2…`); images and manifest unchanged.
+  - `check_numbers.py` **pass**, 0 failures (273 of 273; no-tag elements 246 → 247, the version in the EU row). `test_check_numbers.py`: 34 of 34 and 26 of 26 caught. `check_offline.py` **pass**. `check_links.py` **pass**.
+- **Files changed:** `CLAUDE.md`, `PROGRESS.md`, `README.md`, `docs/content_inventory.md`, `scripts/extract.py`, `scripts/build_page.py`, `scripts/check_links.py`, `site/index.html`.
+- **5. Commit, push and the check after the redeploy:** below.

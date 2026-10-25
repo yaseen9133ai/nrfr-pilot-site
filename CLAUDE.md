@@ -6,7 +6,7 @@ A static web page that explains a palm oil pilot to a non-technical audience. It
 - Site (this folder): `.`
 - Paths in this repository are relative: to this folder, or to the pilot folder where a file says so.
 - Pilot path setting: every script takes the pilot path from one setting, the environment variable `PILOT_DIR` (default `../nrfr-pilot`; a relative value is read from this folder).
-- Publication (decided by Yaseen (Research Assistant), 2026-10-25): this repository will be **public on GitHub**, and the page will be deployed on **Vercel**, which publishes only `site/`. Both happen at Step 6, not before, and only after the PI's permission is recorded (rule 14; recorded on 2026-10-25, Step 5 decision 10).
+- Publication (decided by Yaseen (Research Assistant), 2026-10-25): this repository will be **public on GitHub**, and the page will be deployed on **Vercel**, which publishes only `site/`. Both happen at Step 6, not before, and only after the PI's permission is recorded (rule 14; recorded on 2026-10-25, Step 5 decision 10). Done in Step 6: the repository is public, and the page is live at https://nrfr-pilot.vercel.app/ (Step 6 close-out decision 2). Vercel deploys on every push to `main`, so a push publishes the page too.
 
 At the start of every session, read the Current status in `PROGRESS.md`.
 
@@ -125,12 +125,19 @@ The number list is `docs/number_sources.csv` (spec for `scripts/extract.py`); ca
 
 Step 5 with its fix round approved by Yaseen (Yaseen's hours for the fix round: 1 h).
 
-1. **EU licence:** the credit quotes only the part that applies to the file used (CSV 1.1): "European Commission reuse notice (Decision 2011/833/EU)", a quote from the licence cell of the pilot's `source_register.csv`, tagged (CC BY 4.0 is listed for CSV 1.0).
+1. **EU licence:** the credit quotes only the part that applies to the file used (CSV 1.1): "European Commission reuse notice (Decision 2011/833/EU)", a quote from the licence cell of the pilot's `source_register.csv`, tagged (CC BY 4.0 is listed for CSV 1.0). The sources table too since Step 6 close-out decision 1.
 2. **Section 3:** the "2 open" count is dropped; the log line shows the questions and the decided ones only.
 3. **Link and path check:** `scripts/check_links.py`, in the README's check list.
 4. **Project name on the page:** the page title is "NRFR palm oil pilot"; the name is used once in the intro; elsewhere the page says "the pilot". (Updates public-release decision 4 and Step 5 decision 3.)
 5. **Step 6 go:** Yaseen approves the first commit and the push to the public GitHub repository (rule 11; the PI's permission is recorded, rule 14). Remote `origin`: https://github.com/yaseen9133ai/nrfr-pilot-site.git, branch `main`. The Vercel deploy is not part of this go.
 6. **Commit e-mail:** the GitHub no-reply address, set with `git config --local` before the first commit, so the personal address the repository had until then is not published in the commit history (public-release decision 3).
+
+## Step 6 close-out decisions (Yaseen, 2026-10-26)
+
+1. **EU licence in the sources table:** the EU row also shows only the part that applies to the file used, "European Commission reuse notice (Decision 2011/833/EU)", marked as the part for the CSV file, version 1.1 (as in the credits; answers the Step 6 open question 1).
+2. **Live page:** https://nrfr-pilot.vercel.app/, on Vercel, set up by Yaseen: root directory `site/`, deployed on every push to `main`. The URL is in `README.md` and `PROGRESS.md`.
+3. **Live check:** the live `index.html` and every file in `site/assets/` are downloaded (read-only, into `build/`) and compared by SHA-256 with `site/`; `check_numbers.py` and `check_links.py` run on the downloaded copy (`--html`, `--site`).
+4. **Step 6 done** with this close-out (Yaseen's hours: to fill).
 
 ## Steps
 
