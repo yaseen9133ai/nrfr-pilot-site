@@ -1,0 +1,18 @@
+id,text,basis,applies_to
+forest_loss,"Loss from any cause inside the catchment area, including replanting and logging; not necessarily land cleared by the firm.","CLAUDE.md, Step 3 decision 7 (wording as decided; replaces public-release decision 5 wording); pilot R040, R005",Every forest-loss number for a firm (section 7) and every share of a firm's loss (sections 7 and 8)
+forest_loss_sarawak,"Loss from any cause, including replanting and logging.","CLAUDE.md, Step 4 decision 2 (wording for Sarawak-wide numbers; replaces the Step 3 decision 7 variant)",Every Sarawak-wide or grid forest-loss number (section 5)
+certification_firm_reported,"Includes mill-years that rest on the firms' own group-level statements in their annual reports, not on certificate records (R038).","Pilot R038, R025; reports/step10_findings.md section 4 item 3",Certification values and firm-reported mill-year counts
+ffb_not_comparable,"Units and hectare bases differ between firms, so yields cannot be compared between firms (R048).","Pilot R048, R035; data/processed/README_dataset.md",FFB yield values
+ffb_taann_restated,"Ta Ann's 2022 yield is printed differently in its 2023 annual report, so its 2022 and 2023 yields are not comparable (R046).",Pilot R046; reports/step10_findings.md section 4 item 6,Ta Ann's 2022 and 2023 yields and the restated figure
+dte_whole_group,"Whole-group figure, including business outside palm oil (R007).",Pilot R007; reports/step10_findings.md section 4 item 7,Debt-to-equity values
+wro_missing,"Missing, not zero: the official lists hold only current entries, so 2021–2023 could not be checked. The current lists show no match (R020).","Pilot R020, R010; reports/step10_findings.md section 4 item 2",Counts of missing import-ban and sanctions values
+peat_missing,"Missing: the peat map could not be obtained, and no substitute was used (R034).",Pilot R034; reports/step10_findings.md section 4 item 1,Counts of missing peat values
+encore_licence,"ENCORE content, CC BY-SA 4.0, shown with the ENCORE citation.","CLAUDE.md, public-release decision 6; source_register.csv (ENCORE, licence)",ENCORE-derived numbers and the ENCORE version and DOI
+encore_proxy,"An activity-level proxy: every firm gets the same ratings, from the May 2026 version of ENCORE, not 2021–2023 (R036).",Pilot R036; reports/step10_findings.md section 4 item 8,Counts of ENCORE ratings
+uml_unverified,"Universal Mill List points are unverified, and no licence is stated for the list (R023, R021).","CLAUDE.md, public-release decision 6; pilot R023, R021",Numbers that count or use Universal Mill List points
+no_licence_stated,"The source states no licence; the pilot used it with attribution (R019, R021).","Pilot R019, R021; source_register.csv (licence)","eMSPO, RSPO and Universal Mill List credit lines"
+self_checks,"All checks were self-checks, done by the same party that built the values; no value was checked independently (R043).","Pilot R043, R054, R028; reports/step10_findings.md section 4 item 14",Counts of checked values
+roads_snapshot,"Roads are an OpenStreetMap snapshot of October 2026, not 2021–2023; tracks are included (R052, R055).","Pilot R052, R055; reports/step9_grid.md, Gaps and limitations",Road counts and distances to road
+borders,"Roads and mills outside Sarawak are not used, so distances near the borders can be too long (R055).","Pilot R055; reports/step9_grid.md, Gaps and limitations",Distances to mill and to road
+palm_maps_only,"The palm map is used only for map pictures (findings report, section 4).",reports/step10_findings.md section 4 item 16,Palm map coverage
+scripts_at_report_time,Count at the time of the findings report.,"Yaseen, Step 2 decision 7 (CLAUDE.md)",The Python script count

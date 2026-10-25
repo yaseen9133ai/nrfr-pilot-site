@@ -1,0 +1,45 @@
+# This repository will be public. Keep working files and pilot data out of git.
+# See CLAUDE.md rules 12-13 and docs/content_inventory.md, section e.
+
+# Working files: pilot snapshot, extracted data, check output, local copies of pilot data
+build/
+
+# Local copies of pilot data, if ever made outside build/
+nrfr-pilot/
+data/
+local/
+
+# Raw and source file types that never belong in this repository
+# (annual-report PDFs and page extracts, rasters, GIS databases, OSM extracts, spreadsheets, archives)
+*.pdf
+*.tif
+*.tiff
+*.nc
+*.gpkg
+*.pbf
+*.xlsx
+*.xls
+*.zip
+
+# macOS
+.DS_Store
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Browser-test scratch files (the Playwright tool writes .playwright-mcp/)
+.playwright-mcp/
+
+# Local deployment and secrets (Vercel CLI writes .vercel/)
+.vercel/
+.env
+.env.*
